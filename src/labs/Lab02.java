@@ -1,56 +1,58 @@
 package labs;
 
+import java.util.Scanner;
 
-
-public class Lab02 {
+public class PerformanceTask {
 
 	public static void main(String[] args) {
 		
-		problem01();
-		problem02();
-		problem03();
-		problem04();
 		
+		
+	Scanner inKey1 = new Scanner(System.in);	
+	
+	System.out.print("Enter launch velocity (m/s) >>> ");	
+	
+	int launchVelocity = inKey1.nextInt();
+	
+	System.out.print("Enter launch angle (degrees) >>> ");	
+	int launchAngle = inKey1.nextInt();	
+	System.out.println("Projectile's path: ");
+			
+	int time=0;
+	int yPos = 0;
+	double xPos=Math.cos(Math.toRadians(launchAngle)) * time * launchVelocity;
+	
+	
+	double ypos=Math.sin(Math.toRadians(launchAngle)) * time * launchVelocity - 0.5 * 9.8 * Math.pow(launchAngle, launchVelocity);
+	boolean launch = true;
+	System.out.println("Time: " + time);
+	System.out.println("xPos:  " + xPos +" m");
+	System.out.println( "yPos:  " + yPos + " m");
+	
+	while (launch) {
+		
+	
+	
+	     time++;
+	     xPos=Math.cos(Math.toRadians(launchAngle)) * time * launchVelocity;
+	     
+	     yPos=Math.sin(Math.toRadians(launchAngle)) * time * launchVelocity - 0.5 * 9.8 * Math.pow();
+	     
+	     if (yPos < 0) {
+	         yPos=0;
+	
+	
+	         
+	     }
+	     System.out.println("Time: " + time );
+	     
+	   System.out.println("xPos:  " + xPos +" m");
+	   
+	   System.out.println( "yPos:  " + yPos + " m");
+
+         if (yPos==0) {
+             launch=false;
+       }   
+	}    
 	}
-	
-
-	
-	public static void problem01() {
-		
-		
-		
-		
 	}
-	
-	
-	
-	
-	public static void problem02() {
-		
-		
-		
-	}
-
-	
-	
-
-	public static void problem03() {
-
-		
-		
-	}
-
-
-	
-	
-	public static void problem04() {
-		
-		
-		
-		
-	}
-	
-	
-
-	
-}
